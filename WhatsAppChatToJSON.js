@@ -12,7 +12,7 @@ ntext.forEach(d=>{
     if(message.length<2){
         sender="";
     }
-    message=message.join();
+    message=message.join(":");
     message=message.slice(sender.length+1, message.length);
     sender?sender=sender:sender="whatsapp";
     arr.push({date,time,sender,message});
