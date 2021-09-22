@@ -1,4 +1,5 @@
-const {readFile}=require('fs');
+// read and write file are exclusively nodejs so you might find other places to get your data
+const {readFile, writeFile}=require('fs');
 let combination=(str)=>{
     var fn=function(active, rest, a){
         if(!active && !rest) return;
@@ -64,6 +65,15 @@ function allCombo(w, dict){
     return ret;
 };
 //nodejs only, you may just fetch the dictionary data from elsewhere
+readFile("words.txt", (err, data)=>{
+    if (err){
+        return err;
+    }else{
+        data=data.toString();
+        data=data.split("\n");
+        writeFile('words.json', JSON.stringify(data), err=>err);
+    }
+});
 readFile('words.json', (err,data)=>{
     if(err) return err;
     data=data.toString();
