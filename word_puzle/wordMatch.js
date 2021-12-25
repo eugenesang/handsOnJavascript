@@ -1,4 +1,4 @@
-// read and write file are exclusively nodejs so you might find other places to get your data
+// read and write file are exclusively nodejs so you might find other places to fetch your data
 const {readFile, writeFile}=require('fs');
 let combination=(str)=>{
     var fn=function(active, rest, a){
@@ -81,3 +81,4 @@ readFile('words.json', (err,data)=>{
     let ret=allCombo("leegnd", data);
     console.log(ret);
 })
+// This implementation is very ineffective
