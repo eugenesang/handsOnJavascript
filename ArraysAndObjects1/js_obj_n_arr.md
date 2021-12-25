@@ -6,7 +6,7 @@ Now that we have learned about primitives in JavaScript, its time to talk about 
 Since JavaScript is dynamicaly typed, we are allowed to put different types of variables in an array.
 
 In JavaScript, an array is just an Object in itself. We can initialize an array as follows
-```
+```js
 let arr=[];
 let arr1=new Array();
 ```
@@ -16,7 +16,7 @@ Since we said that an ` Array ` is an ` Object `, there are ` methods ` attached
 These methods help us operate with them for example if we want to know the number of ` elements ` in an array we use the ` length  ` method.
 
 Each method is preceeded with a dot.
-```
+```js
 arr.length;
 arr.pop();
 arr.shift();
@@ -41,7 +41,7 @@ methods and their explanation
 *An* `Object` *is a set of key value pairs*
 
 They can be initalized as 
-```
+```js
 let obj ={
     key:"value",
     key2:"value 2",
@@ -64,7 +64,7 @@ for every key value pair the key is ususaly refered to an object's ` attribute `
 In some cases you are allowed to set attributes that have space between its characters 
 
 for example if you are making a person object and you want to register the date of birth for that person, you are not restricted to use another type convention to achieve this, you may just do something like
-```
+```js
 let person={
     name:"Eugene Sang",
     gender:"male",
@@ -89,19 +89,19 @@ We can go through each element in an array using differnt methods but we are goi
 
 1. the traditional aproach
 * foward loop, from first to last element
-```
+```js
 for (let i =0; i<arr.length; i++){
     //arr[i] is the current element in the iteration
 }
 ```
 * reverse loop, from last to first element
-```
+```js
 for (let i=arr.length-1; i>=0; i--){
     //arr[i] is the current element in the iteration
 }
 ```
 2. Modern implimentation, `for of` loop
-```
+```js
 for (let element of arr){
     //element is the cuurent element in the iteration
 }
@@ -110,7 +110,7 @@ for (let element of arr){
 in JavaScript you can iterate through an object using the ` for in ` loop.
 
 for example
-```
+```js
 for (let attr in obj){
     
 }
@@ -129,13 +129,13 @@ since a function in JavaScript is a first class citizen, you can return it from 
 One such example is iterating through an array using ` .forEach() ` method. In each iteration you get access to the current ellement which you need to use as a parameter in your IIFE
 
 for example
-```
+```js
 arr.forEach(function(element){
     //do something
 })
 ```
 Another example is the ` setTimeout` and ` setInterval` functions where you pass as the first parameter the IIFE
-```
+```js
 setTimeout(
     function(){
         //do something
@@ -146,7 +146,7 @@ setTimeout(
 the above instruction will delay for 1000 miliseconds (1 second) before running the IIFE
 
 example 2
-```
+```js
 setIterval(
     function(){
         //do something
@@ -168,7 +168,7 @@ Structure of an arrow function
 3. The curly braces are put in the body of the function
 
 Lets write the above code using arrow functions
-```
+```js
 arr.forEach((element)=>{
     //do something
 })
@@ -198,7 +198,7 @@ if you have an object `let obj={a:1, b:"alpha"}`
 you can declare a variable that coresponds to an attribute in the object i.e a variable ` a ` and ` b ` that are derrived from the object.
 
 To achieve this, we say 
-```
+```js
 let {a, b}=obj;
 ```
 we will have a local variable ` a ` and ` b` whose values are `1` and ` "alpha" ` respectively
@@ -208,7 +208,7 @@ we will have a local variable ` a ` and ` b` whose values are `1` and ` "alpha" 
 We also have **Array Destructuring**
 
 for example
-```
+```js
 let arr=[1,"alpha"];
 let [a,b]=arr;
 ```
@@ -220,7 +220,7 @@ say add it to the array, if more than one is passed, you iterate through each va
 
 lets use the knowledge we have to make a function that will sum all the numbers and return the result
 
-```
+```js
 let addAll=(...input)=>{
     let answer=0;
     for(let element of input){
@@ -234,7 +234,7 @@ console.log(addAll(9,8,7,6)) // 30
 ## Strings
 If you want to output a string in an elegant format, for example a message like
 
-```
+```js
 let maxScore=5000;
 let player={
     name:"Eugene Sang",
@@ -258,7 +258,7 @@ function createMessage(user){
 console.log(createMessage(player))
 ```
 we could avoid all that code polution using some JavaScript tricks to make it
-```
+```js
 let maxScore=5000;
 let player={
     name:"Eugene Sang",
